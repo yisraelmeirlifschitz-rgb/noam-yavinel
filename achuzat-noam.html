@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>אחוזת נועם יבניאל</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Heebo:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C9A96E;
+    --gold-light: #E8D5B0;
+    --gold-dark: #9B7A45;
+    --cream: #FAF7F2;
+    --stone: #3D3530;
+    --stone-mid: #6B5E55;
+    --stone-light: #C4B5A8;
+    --green: #4A6741;
+    --green-light: #D4E8D0;
+    --white: #FFFFFF;
+    --shadow: 0 4px 32px rgba(61,53,48,0.12);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Heebo', sans-serif;
+    background: var(--cream);
+    color: var(--stone);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(250,247,242,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--gold-light);
+    padding: 0 2rem;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--stone);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--stone-mid);
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold-dark); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--white) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 500 !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--gold-dark) !important; color: var(--white) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to bottom, rgba(250,247,242,0) 0%, rgba(250,247,242,0.3) 40%, rgba(250,247,242,0.85) 100%),
+      url('https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/1.jpg') center/cover no-repeat;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    max-width: 760px;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    background: rgba(201,169,110,0.12);
+    border: 1px solid var(--gold-light);
+    padding: 0.35rem 1rem;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--stone);
+    margin-bottom: 1rem;
+  }
+
+  .hero h1 span {
+    color: var(--gold-dark);
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    color: var(--stone-mid);
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--white);
+    padding: 0.85rem 2.2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background 0.2s, transform 0.1s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-dark); transform: translateY(-1px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--stone);
+    border: 1.5px solid var(--stone-light);
+    padding: 0.85rem 2.2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: border-color 0.2s, color 0.2s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold-dark); }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--stone-mid);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    animation: bounce 2s infinite;
+  }
+
+  .hero-scroll::after {
+    content: '↓';
+    font-size: 1.1rem;
+    color: var(--gold);
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* SECTIONS */
+  section { padding: 6rem 2rem; }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+
+  .section-title {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--stone);
+    margin-bottom: 1rem;
+  }
+
+  .section-sub {
+    color: var(--stone-mid);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.7;
+    max-width: 560px;
+    margin-bottom: 3rem;
+  }
+
+  /* HIGHLIGHTS STRIP */
+  .highlights {
+    background: var(--stone);
+    padding: 3rem 2rem;
+  }
+
+  .highlights-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0;
+  }
+
+  .highlight-item {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    border-left: 1px solid rgba(201,169,110,0.25);
+  }
+
+  .highlight-item:last-child { border-right: 1px solid rgba(201,169,110,0.25); }
+
+  .highlight-num {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    display: block;
+  }
+
+  .highlight-label {
+    font-size: 0.85rem;
+    color: var(--stone-light);
+    margin-top: 0.4rem;
+    font-weight: 300;
+  }
+
+  /* ABOUT / FEATURES */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about-img {
+    position: relative;
+  }
+
+  .about-img img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+  }
+
+  .about-img-accent {
+    position: absolute;
+    bottom: -1.5rem;
+    left: -1.5rem;
+    width: 55%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 4px solid var(--cream);
+  }
+
+  .about-badge {
+    position: absolute;
+    top: 1.5rem;
+    right: -1.5rem;
+    background: var(--gold);
+    color: var(--white);
+    padding: 1rem 1.2rem;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.3;
+    font-size: 0.85rem;
+    box-shadow: var(--shadow);
+  }
+
+  .about-badge strong {
+    display: block;
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  /* AMENITY CARDS */
+  .amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .amenity-card {
+    background: var(--white);
+    border: 1px solid var(--gold-light);
+    border-radius: 6px;
+    padding: 1.8rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .amenity-card:hover {
+    box-shadow: var(--shadow);
+    transform: translateY(-3px);
+  }
+
+  .amenity-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .amenity-title {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--stone);
+    margin-bottom: 0.5rem;
+  }
+
+  .amenity-text {
+    font-size: 0.9rem;
+    color: var(--stone-mid);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* GALLERY */
+  .gallery-section {
+    background: var(--stone);
+    padding: 6rem 2rem;
+  }
+
+  .gallery-section .section-title { color: var(--cream); }
+  .gallery-section .section-sub { color: var(--stone-light); }
+  .gallery-section .section-label { color: var(--gold); }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 8px;
+    margin-top: 2rem;
+  }
+
+  .gallery-item {
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+    min-height: 180px;
+  }
+
+  .gallery-item:hover img { transform: scale(1.05); }
+
+  .gallery-item.wide { grid-column: span 2; }
+  .gallery-item.tall { grid-row: span 2; }
+  .gallery-item.big { grid-column: span 2; grid-row: span 2; }
+
+  .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(61,53,48,0);
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gallery-item:hover .gallery-overlay {
+    background: rgba(61,53,48,0.3);
+  }
+
+  .gallery-zoom {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.9);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    color: var(--stone);
+  }
+
+  .gallery-item:hover .gallery-zoom { opacity: 1; }
+
+  /* LIGHTBOX */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox.active { display: flex; }
+
+  .lightbox-img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0.5rem;
+  }
+
+  .lightbox-prev, .lightbox-next {
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 1rem 1.3rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  .lightbox-prev:hover, .lightbox-next:hover { background: rgba(255,255,255,0.3); }
+  .lightbox-prev { left: 1.5rem; }
+  .lightbox-next { right: 1.5rem; }
+
+  /* ROOMS */
+  .rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .room-card {
+    background: var(--white);
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--gold-light);
+    transition: box-shadow 0.2s;
+  }
+
+  .room-card:hover { box-shadow: var(--shadow); }
+
+  .room-card img {
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    display: block;
+  }
+
+  .room-info {
+    padding: 1.2rem 1.4rem;
+  }
+
+  .room-title {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--stone);
+    margin-bottom: 0.3rem;
+  }
+
+  .room-desc {
+    font-size: 0.85rem;
+    color: var(--stone-mid);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  /* EVENTS RIBBON */
+  .events-section {
+    background: var(--green);
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+
+  .events-section .section-title { color: var(--white); margin: 0 auto 0.8rem; }
+  .events-section .section-label { color: var(--gold); }
+  .events-section .section-sub { color: rgba(255,255,255,0.75); margin: 0 auto 2.5rem; }
+
+  .events-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+
+  .event-tag {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: var(--white);
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 300;
+    transition: background 0.2s;
+  }
+
+  .event-tag:hover { background: rgba(255,255,255,0.2); }
+
+  /* SHABBAT */
+  .shabbat-section {
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shabbat-section::before {
+    content: '';
+    position: absolute;
+    top: -2rem; right: -4rem;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(201,169,110,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .shabbat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .shabbat-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+
+  .shabbat-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--stone-mid);
+  }
+
+  .shabbat-list li::before {
+    content: '✓';
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+
+  .shabbat-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  /* AREA */
+  .area-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  .area-card {
+    background: var(--white);
+    border: 1px solid var(--gold-light);
+    border-radius: 6px;
+    padding: 1.4rem 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--stone-mid);
+    transition: border-color 0.2s;
+  }
+
+  .area-card:hover { border-color: var(--gold); }
+  .area-card .icon { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
+
+  /* CTA */
+  .cta-section {
+    background: var(--stone);
+    text-align: center;
+    padding: 7rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: 'אחוזת נועם';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 18rem;
+    font-weight: 900;
+    color: rgba(255,255,255,0.03);
+    white-space: nowrap;
+    pointer-events: none;
+    line-height: 1;
+  }
+
+  .cta-section .section-title { color: var(--white); }
+  .cta-section .section-sub { color: var(--stone-light); margin: 0 auto 2.5rem; }
+
+  .contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .contact-item {
+    text-align: center;
+    color: var(--stone-light);
+    font-size: 0.9rem;
+  }
+
+  .contact-item a {
+    color: var(--gold);
+    text-decoration: none;
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 0.3rem;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #1A1613;
+    padding: 2rem;
+    text-align: center;
+    color: var(--stone-light);
+    font-size: 0.8rem;
+  }
+
+  footer span { color: var(--gold); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 0 1rem; }
+    .nav-links { display: none; }
+    .about-grid, .shabbat-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .about-img-accent { display: none; }
+    .about-badge { top: 1rem; right: 1rem; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery-item.wide { grid-column: span 1; }
+    .gallery-item.big { grid-column: span 1; grid-row: span 1; }
+    section { padding: 4rem 1.2rem; }
+    .highlights-grid { grid-template-columns: repeat(3, 1fr); }
+    .highlight-item { border: none; border-top: 1px solid rgba(201,169,110,0.25); }
+    .cta-section::before { display: none; }
+    .contact-info { gap: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">אחוזת נועם</a>
+  <ul class="nav-links">
+    <li><a href="#about">המתחם</a></li>
+    <li><a href="#rooms">חדרים</a></li>
+    <li><a href="#gallery">גלריה</a></li>
+    <li><a href="#events">אירועים</a></li>
+    <li><a href="#contact" class="nav-cta">הזמינו עכשיו</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-tag">יבניאל · רמת הגולן והכנרת</div>
+    <h1>אחוזת נועם<br><span>יבניאל</span></h1>
+    <p>מתחם אירוח יוקרתי בלב הגולן — שומר שבת וכשרות, בריכה מחוממת, 7 חדרי שינה ואינספור זכרונות</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">לבדיקת זמינות</a>
+      <a href="#gallery" class="btn-outline">לגלריה</a>
+    </div>
+  </div>
+  <div class="hero-scroll">גלו עוד</div>
+</section>
+
+<!-- HIGHLIGHTS STRIP -->
+<div class="highlights">
+  <div class="highlights-grid">
+    <div class="highlight-item">
+      <span class="highlight-num">34</span>
+      <div class="highlight-label">אורחים ללינה</div>
+    </div>
+    <div class="highlight-item">
+      <span class="highlight-num">80</span>
+      <div class="highlight-label">אורחים לאירוע</div>
+    </div>
+    <div class="highlight-item">
+      <span class="highlight-num">7</span>
+      <div class="highlight-label">חדרי שינה</div>
+    </div>
+    <div class="highlight-item">
+      <span class="highlight-num">6</span>
+      <div class="highlight-label">חדרי אמבטיה</div>
+    </div>
+    <div class="highlight-item">
+      <span class="highlight-num">12×4</span>
+      <div class="highlight-label">מ' — בריכה מחוממת</div>
+    </div>
+    <div class="highlight-item">
+      <span class="highlight-num">2</span>
+      <div class="highlight-label">קומות + 4 מרפסות</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-img">
+        <img src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/2.jpg" alt="אחוזת נועם מבחוץ" onerror="this.src='https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/3.jpg'">
+        <img class="about-img-accent" src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/5.jpg" alt="פרט מהאחוזה" onerror="this.style.display='none'">
+        <div class="about-badge">
+          <strong>100%</strong>
+          שומר שבת וכשרות
+        </div>
+      </div>
+      <div>
+        <span class="section-label">על המקום</span>
+        <h2 class="section-title">מרחב יוקרתי בטבע הגולן</h2>
+        <p class="section-sub">וילת אירוח מרשימה על שני מפלסים, עם נוף פנורמי להרים ולשטחים הירוקים. המתחם עוצב בקפידה לשמור על אווירה חמה ומפנקת, תוך שמירה מלאה על שבת וכשרות.</p>
+
+        <div class="amenities-grid" style="grid-template-columns: 1fr 1fr; margin-top: 0; gap: 1rem;">
+          <div class="amenity-card" style="padding: 1.2rem;">
+            <span class="amenity-icon">🏊</span>
+            <div class="amenity-title">בריכה מחוממת</div>
+            <div class="amenity-text">12×4 מ', עומק 1.85 מ', מקורה בחורף, עם מפל מים ומגודרת לבטיחות ילדים</div>
+          </div>
+          <div class="amenity-card" style="padding: 1.2rem;">
+            <span class="amenity-icon">🍳</span>
+            <div class="amenity-title">מטבח כפול</div>
+            <div class="amenity-text">2 מקררים, 2 תנורים, 2 מיקרוגלים (חלבי ובשרי), כיריים גז — שומר כשרות מלא</div>
+          </div>
+          <div class="amenity-card" style="padding: 1.2rem;">
+            <span class="amenity-icon">🎯</span>
+            <div class="amenity-title">בידור ומשחקים</div>
+            <div class="amenity-text">סנוקר 7 פיט, כדורגל שולחן, כדורסל אלקטרוני, הוקי אוויר, פינג פונג ועוד</div>
+          </div>
+          <div class="amenity-card" style="padding: 1.2rem;">
+            <span class="amenity-icon">📺</span>
+            <div class="amenity-title">מולטימדיה</div>
+            <div class="amenity-text">Smart TV, טלוויזיה 65 אינץ', פלזמה 42 אינץ', סלקום TV ואינטרנט אלחוטי</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES FULL -->
+<section style="background: var(--white); padding: 5rem 2rem;">
+  <div class="section-inner">
+    <span class="section-label">כל מה שצריך</span>
+    <h2 class="section-title">מפרט מלא של המתחם</h2>
+    <p class="section-sub">הכל כלול — כך שתוכלו להתמקד רק בהנאה</p>
+
+    <div class="amenities-grid">
+      <div class="amenity-card">
+        <span class="amenity-icon">🛏️</span>
+        <div class="amenity-title">7 חדרי שינה</div>
+        <div class="amenity-text">2 סוויטות הורים עם חדר רחצה פרטי וחדר ילד מחובר, חדר ממ"ד, 2 חדרי שינה כפולים. כל המיטות יהודיות עם מזרונים אורטופדיים. מזרונים נוספים ועד 5 לולים לתינוקות לפי דרישה.</div>
+      </div>
+      <div class="amenity-card">
+        <span class="amenity-icon">🛁</span>
+        <div class="amenity-title">6 חדרי אמבטיה</div>
+        <div class="amenity-text">מגבות, מייבש שיער, שמפו, תחליב רחצה, מקלחת ראש גשם, מכונת כביסה ומייבש כביסה</div>
+      </div>
+      <div class="amenity-card">
+        <span class="amenity-icon">🌿</span>
+        <div class="amenity-title">חצר ירוקה</div>
+        <div class="amenity-text">מטבח חיצוני, מנגל, ריהוט גן, שמשיות, מיטת שיזוף, נדנדת ערסל, משחקי ילדים וסביבה פתוחה</div>
+      </div>
+      <div class="amenity-card">
+        <span class="amenity-icon">🕯️</span>
+        <div class="amenity-title">ציוד שבת</div>
+        <div class="amenity-text">פלטת שבת, מיחם, שעון שבת, 2 מקררים שומרי שבת, כיורים כפולים, בית כנסת בקרבה, מקווה גברים ונשים</div>
+      </div>
+      <div class="amenity-card">
+        <span class="amenity-icon">🎂</span>
+        <div class="amenity-title">עיצוב אירועים</div>
+        <div class="amenity-text">סידור ועיצוב ליום הולדת, הצעות נישואין ואירועים מיוחדים — בתיאום מראש מול המארחת</div>
+      </div>
+      <div class="amenity-card">
+        <span class="amenity-icon">🐾</span>
+        <div class="amenity-title">מקבלים בעלי חיים</div>
+        <div class="amenity-text">המתחם מאפשר הגעה עם בעלי חיים בתיאום מראש. 7 שולחנות מתקפלים וכיסאות לכל אירוע.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROOMS -->
+<section id="rooms">
+  <div class="section-inner">
+    <span class="section-label">חדרי שינה</span>
+    <h2 class="section-title">מנוחה מפנקת לכולם</h2>
+    <p class="section-sub">שבעה חדרי שינה בשני מפלסים, מסוויטות הורים עם חדר רחצה פרטי ועד חדרי ילדים מחוברים</p>
+
+    <div class="rooms-grid">
+      <div class="room-card">
+        <img src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/6.jpg" alt="סוויטת הורים" onerror="this.src='https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/7.jpg'">
+        <div class="room-info">
+          <div class="room-title">סוויטת הורים</div>
+          <div class="room-desc">מיטה זוגית יהודית, חדר רחצה פרטי, דלת מקשרת לחדר שינה נוסף עם מיטה זוגית</div>
+        </div>
+      </div>
+      <div class="room-card">
+        <img src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/8.jpg" alt="חדר שינה" onerror="this.src='https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/9.jpg'">
+        <div class="room-info">
+          <div class="room-title">חדרי שינה כפולים</div>
+          <div class="room-desc">שני חדרי שינה עם מיטות זוגיות, חולקים חדר רחצה מפנק — אידיאלי לזוגות</div>
+        </div>
+      </div>
+      <div class="room-card">
+        <img src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/10.jpg" alt="ממ"ד" onerror="this.src='https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/4.jpg'">
+        <div class="room-info">
+          <div class="room-title">חדר ממ"ד</div>
+          <div class="room-desc">חדר שינה עצמאי עם מיטה זוגית, מזגן ואבטחה מוגברת</div>
+        </div>
+      </div>
+      <div class="room-card">
+        <img src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/11.jpg" alt="סלון" onerror="this.src='https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/12.jpg'">
+        <div class="room-info">
+          <div class="room-title">סלון מעוצב</div>
+          <div class="room-desc">סלון מרווח, 4 מרפסות, נדנדת ערסל ונוף פנורמי להרים ולשדות</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section" id="gallery">
+  <div class="section-inner">
+    <span class="section-label">גלריה</span>
+    <h2 class="section-title" style="color: var(--cream);">ראו בעצמכם</h2>
+    <p class="section-sub">אחוזת נועם — מרחב שנוצר כדי שתרגישו בבית</p>
+
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-item big" onclick="openLightbox(0)">
+        <img src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/1.jpg" alt="אחוזת נועם">
+        <div class="gallery-overlay"><div class="gallery-zoom">⊕</div></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(1)">
+        <img src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/2.jpg" alt="">
+        <div class="gallery-overlay"><div class="gallery-zoom">⊕</div></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(2)">
+        <img src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/3.jpg" alt="">
+        <div class="gallery-overlay"><div class="gallery-zoom">⊕</div></div>
+      </div>
+      <div class="gallery-item wide" onclick="openLightbox(3)">
+        <img src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/4.jpg" alt="">
+        <div class="gallery-overlay"><div class="gallery-zoom">⊕</div></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(4)">
+        <img src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/5.jpg" alt="">
+        <div class="gallery-overlay"><div class="gallery-zoom">⊕</div></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(5)">
+        <img src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/6.jpg" alt="">
+        <div class="gallery-overlay"><div class="gallery-zoom">⊕</div></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(6)">
+        <img src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/7.jpg" alt="">
+        <div class="gallery-overlay"><div class="gallery-zoom">⊕</div></div>
+      </div>
+      <div class="gallery-item wide" onclick="openLightbox(7)">
+        <img src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/8.jpg" alt="">
+        <div class="gallery-overlay"><div class="gallery-zoom">⊕</div></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(8)">
+        <img src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/9.jpg" alt="">
+        <div class="gallery-overlay"><div class="gallery-zoom">⊕</div></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(9)">
+        <img src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/10.jpg" alt="">
+        <div class="gallery-overlay"><div class="gallery-zoom">⊕</div></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(10)">
+        <img src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/11.jpg" alt="">
+        <div class="gallery-overlay"><div class="gallery-zoom">⊕</div></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(11)">
+        <img src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/12.jpg" alt="">
+        <div class="gallery-overlay"><div class="gallery-zoom">⊕</div></div>
+      </div>
+      <div class="gallery-item wide" onclick="openLightbox(12)">
+        <img src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/13.jpg" alt="">
+        <div class="gallery-overlay"><div class="gallery-zoom">⊕</div></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(13)">
+        <img src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/14.jpg" alt="">
+        <div class="gallery-overlay"><div class="gallery-zoom">⊕</div></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(14)">
+        <img src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/15.jpg" alt="">
+        <div class="gallery-overlay"><div class="gallery-zoom">⊕</div></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(15)">
+        <img src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/16.jpg" alt="">
+        <div class="gallery-overlay"><div class="gallery-zoom">⊕</div></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(16)">
+        <img src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/17.jpg" alt="">
+        <div class="gallery-overlay"><div class="gallery-zoom">⊕</div></div>
+      </div>
+      <div class="gallery-item wide" onclick="openLightbox(17)">
+        <img src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/18.jpg" alt="">
+        <div class="gallery-overlay"><div class="gallery-zoom">⊕</div></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(18)">
+        <img src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/19.jpg" alt="">
+        <div class="gallery-overlay"><div class="gallery-zoom">⊕</div></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(19)">
+        <img src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/20.jpg" alt="">
+        <div class="gallery-overlay"><div class="gallery-zoom">⊕</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <button class="lightbox-prev" onclick="changeLightbox(-1)">‹</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-next" onclick="changeLightbox(1)">›</button>
+</div>
+
+<!-- EVENTS -->
+<section class="events-section" id="events">
+  <span class="section-label">אירועים</span>
+  <h2 class="section-title">הרגע המושלם מתחיל כאן</h2>
+  <p class="section-sub">אחוזת נועם מארחת כל סוג של אירוע — עד 80 אורחים — באווירה חמה ואינטימית</p>
+
+  <div class="events-tags">
+    <span class="event-tag">🎂 ימי הולדת</span>
+    <span class="event-tag">💍 שבת חתן</span>
+    <span class="event-tag">🎉 מסיבת רווקים</span>
+    <span class="event-tag">💃 מסיבת רווקות</span>
+    <span class="event-tag">✡️ בר / בת מצווה</span>
+    <span class="event-tag">👨‍👩‍👧 כינוס משפחתי</span>
+    <span class="event-tag">👥 קבוצות</span>
+    <span class="event-tag">💍 הצעת נישואין</span>
+  </div>
+
+  <a href="#contact" class="btn-primary">דברו איתנו על האירוע שלכם</a>
+</section>
+
+<!-- SHABBAT -->
+<section class="shabbat-section">
+  <div class="section-inner">
+    <div class="shabbat-grid">
+      <div>
+        <span class="section-label">לציבור הדתי</span>
+        <h2 class="section-title">שומרים שבת וכשרות בכל פרט</h2>
+        <p class="section-sub">המתחם עוצב מתחילתו עם מחשבה על שמירת שבת מלאה — ללא פשרות.</p>
+        <ul class="shabbat-list">
+          <li>מיטות יהודיות</li>
+          <li>פלטת שבת</li>
+          <li>מיחם חשמלי</li>
+          <li>שעון שבת</li>
+          <li>2 מקררים שומרי שבת</li>
+          <li>2 כיורים נפרדים</li>
+          <li>2 תנורים (חלבי/בשרי)</li>
+          <li>2 מיקרוגלים</li>
+          <li>בית כנסת בקרבה</li>
+          <li>מקווה גברים</li>
+          <li>מקווה נשים</li>
+          <li>כשרות מלאה</li>
+        </ul>
+      </div>
+      <div>
+        <img class="shabbat-img" src="https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/13.jpg" alt="שבת באחוזת נועם" onerror="this.src='https://raw.githubusercontent.com/yisraelmeirlifschitz-rgb/noam-yavinel/main/Gallery/14.jpg'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREA -->
+<section style="background: var(--white);">
+  <div class="section-inner">
+    <span class="section-label">האזור</span>
+    <h2 class="section-title">יבניאל ומה שסביבה</h2>
+    <p class="section-sub">ישוב יבניאל ברמת הגולן — שער לאינספור פעילויות והרפתקאות בטבע</p>
+
+    <div class="area-cards">
+      <div class="area-card">
+        <span class="icon">🍽️</span>
+        מסעדות
+      </div>
+      <div class="area-card">
+        <span class="icon">🥾</span>
+        מסלולי טיולים
+      </div>
+      <div class="area-card">
+        <span class="icon">🏍️</span>
+        טרקטורונים
+      </div>
+      <div class="area-card">
+        <span class="icon">🐴</span>
+        רכיבה על סוסים
+      </div>
+      <div class="area-card">
+        <span class="icon">🚙</span>
+        סיורי ג'יפים
+      </div>
+      <div class="area-card">
+        <span class="icon">🌊</span>
+        הכנרת
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<section class="cta-section" id="contact">
+  <div style="position: relative; z-index: 1;">
+    <span class="section-label">צרו קשר</span>
+    <h2 class="section-title">מוכנים לחוויה בלתי נשכחת?</h2>
+    <p class="section-sub">צרו קשר לבדיקת זמינות, שאלות או הזמנה — נשמח לעזור</p>
+
+    <a href="tel:+972000000000" class="btn-primary" style="margin-bottom: 1rem; display: inline-block;">📞 התקשרו עכשיו</a>
+
+    <div class="contact-info">
+      <div class="contact-item">
+        מיקום
+        <a href="#">יבניאל, רחוב אלון · רמת הגולן</a>
+      </div>
+      <div class="contact-item">
+        אירועים
+        <a href="#">עד 80 אורחים</a>
+      </div>
+      <div class="contact-item">
+        לינה
+        <a href="#">עד 34 אורחים</a>
+      </div>
+      <div class="contact-item">
+        בעלי חיים
+        <a href="#">בתיאום מראש ✓</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 <span>אחוזת נועם יבניאל</span> · כל הזכויות שמורות · יבניאל, רמת הגולן</p>
+</footer>
+
+<script>
+  const imgs = Array.from(document.querySelectorAll('.gallery-item img')).map(i => i.src);
+  let current = 0;
+
+  function openLightbox(idx) {
+    current = idx;
+    document.getElementById('lightboxImg').src = imgs[idx];
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(e) {
+    if (!e || e.target === document.getElementById('lightbox') || e.target.classList.contains('lightbox-close')) {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
+  function changeLightbox(dir) {
+    current = (current + dir + imgs.length) % imgs.length;
+    document.getElementById('lightboxImg').src = imgs[current];
+  }
+
+  document.addEventListener('keydown', e => {
+    if (document.getElementById('lightbox').classList.contains('active')) {
+      if (e.key === 'Escape') closeLightbox({target: document.getElementById('lightbox')});
+      if (e.key === 'ArrowLeft') changeLightbox(1);
+      if (e.key === 'ArrowRight') changeLightbox(-1);
+    }
+  });
+
+  // Hide gallery items with broken images gracefully
+  document.querySelectorAll('.gallery-item img').forEach(img => {
+    img.addEventListener('error', function() {
+      this.closest('.gallery-item').style.display = 'none';
+    });
+  });
+</script>
+
+</body>
+</html>
